@@ -6,6 +6,6 @@ I have models for branches, experiments, and users.
 
 Users can login using an email and a session will begin associated with that user. A user can't make a contribution to the database until they have logged in.
 
-Experiments have "stories" as their content that a user inputs, and they can also choose the branch of philosophy that it falls under, or alternatively create a new one while creating the experiment in the 'experiment/new' form. There are then pages for each individual experiment that you can view via an id in the URI.
+Experiments have "stories" as their content that a user inputs, and they can also choose the branch of philosophy that it falls under, or alternatively create a new one while creating the experiment in the 'experiment/new' form. There are then pages for each individual experiment that you can view via an id in the URI. The user can create, read, update and destroy their (and only their) contributions.
 
 Branches only have a view where you can see the list of branches and their links to views that show the experiments that belong to them. No forms.

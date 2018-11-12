@@ -1,18 +1,33 @@
 class ExperimentsController < ApplicationController
 
-  # GET: /experiments
+  # GET: /experiments - lists all experiments and links only if logged in
   get "/experiments" do
-    erb :"/experiments/index.html"
+    if logged_in?
+      erb :"/experiments/index.html"
+    else
+      redirect :'/users/index'
+    end
   end
 
-  # GET: /experiments/new
+  # GET: /experiments/new - form for a new experiment
   get "/experiments/new" do
-    erb :"/experiments/new.html"
+    if logged_in?
+      erb :"/experiments/new.html"
+    else
+      redirect :'/users/index'
+    end
   end
 
-  # POST: /experiments
+  # POST: /experiments - creates a new story and either associates it with the branch or makes a new branch
   post "/experiments" do
-    redirect "/experiments"
+    if logged_in?
+      if !params[:story].empty?
+        @story = Experiment.create(story: params[:story])
+        @story.save
+        redirect "/experiments"
+      else
+        redirect "/experiments/new"
+    end
   end
 
   # GET: /experiments/5

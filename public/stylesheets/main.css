@@ -13,14 +13,14 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: #edbb9a;
-    color:  #edbb9a;
+    background-color: #ef9d56;
+    color:  #efac75;
     font-family: Sans-Serif;
     line-height: 18px;
   }
 
   .wrapper {
-    background: #5b524c;
+    background: #686059;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);

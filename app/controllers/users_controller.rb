@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     redirect "/users"
   end
 
-  # GET: /users/5
+  # GET: /users/5 - shows a profile page wth links to the stories they uploaded
   get "/users/:id" do
     erb :"/users/show.html"
   end

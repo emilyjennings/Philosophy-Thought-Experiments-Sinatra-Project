@@ -3,7 +3,13 @@ class BranchesController < ApplicationController
   # GET: /branches
   get "/branches" do
     @branches = Branch.all
+    # displays all the branches with links to the page that contains their experiments lists too
     erb :"/branches/index.html"
+  end
+
+  # GET: /branches/5
+  get "/branches/:id" do
+    erb :"/branches/show.html"
   end
 
   # # GET: /branches/new
@@ -16,10 +22,7 @@ class BranchesController < ApplicationController
   #   redirect "/branches"
   # end
   #
-  # # GET: /branches/5
-  # get "/branches/:id" do
-  #   erb :"/branches/show.html"
-  # end
+
   #
   # # GET: /branches/5/edit
   # get "/branches/:id/edit" do

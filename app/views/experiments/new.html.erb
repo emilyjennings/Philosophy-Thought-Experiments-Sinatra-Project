@@ -1,1 +1,11 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h1>Create a new Thought Experiment Story.</h1>
+
+<%if logged_in?%>
+  <h1>Create a new story:</h1>
+  <form action="/experiments" method="post">
+    <textarea rows="10" cols="30" name="story" value="your story here"></textarea>
+    <input type="submit" name="submit" id='submit' value="submit">
+  </form>
+<%else%>
+  <a href="users/index.html">Login</a>
+<%end%>

@@ -2,6 +2,7 @@ class CreateExperiments < ActiveRecord::Migration
   def change
     create_table :experiments do |t|
       t.string :story
+      t.string :title
       t.integer :branch_id
       t.integer :user_id
 

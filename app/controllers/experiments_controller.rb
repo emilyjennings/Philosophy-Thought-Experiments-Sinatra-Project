@@ -3,6 +3,7 @@ class ExperimentsController < ApplicationController
   # GET: /experiments - lists all experiments and links only if logged in
   get "/experiments" do
     if logged_in?
+      @stories = Experiment.all
       erb :"/experiments/index.html"
     else
       redirect :'/users/index'
@@ -22,11 +23,13 @@ class ExperimentsController < ApplicationController
   post "/experiments" do
     if logged_in?
       if !params[:story].empty?
-        @story = Experiment.create(story: params[:story])
+        @story = Experiment.create(title: params[:title], story: params[:story])
+        @story.branch = Branch.find_by(params[:branch])
         @story.save
         redirect "/experiments"
       else
         redirect "/experiments/new"
+      end
     end
   end
 

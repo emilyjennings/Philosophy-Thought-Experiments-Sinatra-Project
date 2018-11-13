@@ -14,15 +14,15 @@ class UsersController < ApplicationController
 
   # POST: /users
   post "/users" do
-    # @user = User.find_by(params[:username])
-    # if !@user
+    @user = User.find_by(username: params[:username])
+    if @user
       @user = User.create(username: params[:username])
       @user.save
       session[:user_id] = @user.id
       redirect "/users"
-    # else
-      # redirect "/users"
-    # end
+    else
+      redirect "/users"
+    end
   end
 
   # GET: /users/5 - shows a profile page with links to the stories they uploaded

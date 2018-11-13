@@ -30,6 +30,11 @@ class UsersController < ApplicationController
     erb :"/users/show.html"
   end
 
+  get '/users/logout' do
+      session.clear
+      redirect "/"
+  end
+
   # # GET: /users/5/edit
   # get "/users/:id/edit" do
   #   erb :"/users/edit.html"

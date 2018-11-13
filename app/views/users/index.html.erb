@@ -1,10 +1,11 @@
 <%if logged_in?%>
   <h1>Welcome, <%=@user.username.capitalize%>, to the wonderful world of the Philosophy Community!</h1>
+  <p><a href="/users/logout">Log Out</a></p>
 <%else%>
   <form action="/users" method="post">
     <label>Log In Please:</label>
     <input type="text" name="username" value="username">
     <input type="submit" name="submit" value="submit">
   </form>
+  <p>Or, <a href="/users/new">Sign Up for an Account</a></p>
 <%end%>
-<a href="/users/new">Sign Up for an Account</a>

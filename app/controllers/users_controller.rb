@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if !@user
       @user = User.create(username: params[:username])
       @user.save
-      session[:username] = @user.username
+      session[:user_id] = @user.id
       redirect "/users"
     else
       redirect "/users"

@@ -24,7 +24,7 @@ class ExperimentsController < ApplicationController
     if logged_in?
       if !params[:story].empty?
         @story = Experiment.create(title: params[:title], story: params[:story])
-        @story.branch = Branch.find_by(params[:branch])
+        @story.branch = Branch.find_by(branch: params[:branch])
         @story.save
         redirect "/experiments"
       else

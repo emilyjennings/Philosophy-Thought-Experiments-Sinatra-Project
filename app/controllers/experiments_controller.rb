@@ -25,8 +25,7 @@ class ExperimentsController < ApplicationController
   post "/experiments" do
     if logged_in?
       if !params[:story].empty?
-        @story = Experiment.create(title: params[:title], story: params[:story])
-        @story.branch_id = params[:branch_id]
+        @story = Experiment.create(title: params[:title], story: params[:story], branch_id: params[:branch_id])
         @story.save
         redirect "/experiments"
       else

@@ -8,9 +8,16 @@
     <textarea rows="20" cols="80" name="story" value="your story here"></textarea>
     </br>
     <label>Branch of philosophy (choose only one):</label>
-    <%Branch.all.each do |b|%>
+    <!-- <%Branch.all.each do |b|%>
       <input type="checkbox" name="experiment[branch_ids][]" id="branch_<%=b.id%>" value="branch_<%=b.id%>"><%=b.branch%></input>
-    <%end%>
+    <%end%> -->
+
+    <select name="branch_id">
+       <% Branch.all.each do |b| %>
+         <option value=<%=b.id %>><%= b.branch %></option>
+       <% end %>
+     </select>
+
     </br>
     <input type="submit" name="submit" id='submit' value="submit">
   </form>

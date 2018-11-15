@@ -1,3 +1,5 @@
+require 'pry'
+
 class ExperimentsController < ApplicationController
 
   # GET: /experiments - lists all experiments and links only if logged in
@@ -23,8 +25,9 @@ class ExperimentsController < ApplicationController
   post "/experiments" do
     if logged_in?
       if !params[:story].empty?
+
         @story = Experiment.create(title: params[:title], story: params[:story])
-        @story.branch = Branch.find_by(branch: params[:branch])
+        @story.branch_id = params[:experiment][:branch_ids]
         @story.save
         redirect "/experiments"
       else

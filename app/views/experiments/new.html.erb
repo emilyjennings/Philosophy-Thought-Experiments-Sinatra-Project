@@ -9,7 +9,7 @@
     </br>
     <label>Branch of philosophy (choose only one):</label>
     <%Branch.all.each do |b|%>
-      <input type="checkbox" name="b[]" id="<%=b.branch%>" value="<%=b.id%>"><%=b.branch%></input>
+      <input type="checkbox" name="experiment[branch_ids][]" id="branch_<%=b.id%>" value="branch_<%=b.id%>"><%=b.branch%></input>
     <%end%>
     </br>
     <input type="submit" name="submit" id='submit' value="submit">

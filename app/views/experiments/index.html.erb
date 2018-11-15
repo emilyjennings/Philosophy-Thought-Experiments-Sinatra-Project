@@ -1,7 +1,8 @@
 <h1>Stories:</h1>
-<%@stories.each do |s|%>
+<%Experiment.all.each do |s|%>
   <h3><%=s.title%></h3>
   <p><%=s.story%></p>
-  <h4><%=s.branch%></h4>
+  <%@branch = Branch.find_by(id: s.branch_id)%>
+  <h4><%=@branch%></h4>
   </br>
 <%end%>

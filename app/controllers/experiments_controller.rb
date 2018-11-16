@@ -34,19 +34,24 @@ class ExperimentsController < ApplicationController
     end
   end
 
-  # GET: /experiments/5
   get "/experiments/:id" do
     @story = Experiment.find(params[:id])
     erb :"/experiments/show.html"
   end
 
-  # GET: /experiments/5/edit
   get "/experiments/:id/edit" do
     erb :"/experiments/edit.html"
   end
 
-  # PATCH: /experiments/5
   patch "/experiments/:id" do
+    @story = Experiment.find_by(id: params[:id])
+    if !params[:story].empty?
+      @story = Experiment.create(title: params[:title], story: params[:story], branch_id: params[:branch_id])
+      @story.save
+    else
+      redirect :"/experiments/:id/edit"
+    end
+    flash[:message] = "Updated"
     redirect "/experiments/:id"
   end
 

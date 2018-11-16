@@ -1,4 +1,4 @@
 <h1>Branches:</h1>
-<%@branches.each do |b|%>
-  <h2><%=b.branch%></h2>
+<%Branch.all.each do |b|%>
+  <h2><%=b.name%></h2>
 <%end%>

@@ -1,8 +1,8 @@
 <h1>Stories:</h1>
 <%Experiment.all.each do |s|%>
-  <h3><%=s.title%></h3>
-  <p><%=s.story%></p>
-  <%@branch = Branch.find_by(id: s.branch_id)%>
-  <h4><%=@branch%></h4>
+  <h3><a href="/experiments/<%=s.id%>"><%=s.title%></a></h3>
+  <h4><%=Branch.find_by(id: s.branch_id).name%></h4>
   </br>
 <%end%>
+
+<a href="/experiments/new">Add a new thought experiment story!</a>

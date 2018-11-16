@@ -36,6 +36,7 @@ class ExperimentsController < ApplicationController
 
   # GET: /experiments/5
   get "/experiments/:id" do
+    @story = Experiment.find(params[:id])
     erb :"/experiments/show.html"
   end
 

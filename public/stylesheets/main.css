@@ -13,14 +13,14 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: #efc258;
-    color:  #efc258;
+    background-color: #47874d;
+    color: #47874d;
     font-family: Sans-Serif;
     line-height: 18px;
   }
 
   .wrapper {
-    background: #686059;
+    background: #19261a;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -37,7 +37,7 @@
   }
 
   h2 {
-    border-bottom: 2px solid #846753;
+    border-bottom: 2px solid #bac6bb;
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
@@ -63,7 +63,7 @@
 
   .sidebar {
     background: #ccb3a3;
-    border: 1px solid #e87b33;
+    border: 1px solid #bac6bb;
     float: right;
     padding: 2.08333333333%; /* 5px / 240px */
     width: 30%; /* 240px / 800px */

@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20181111145038) do
 
   create_table "branches", force: :cascade do |t|
-    t.string   "branch"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

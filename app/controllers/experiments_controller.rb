@@ -40,6 +40,7 @@ class ExperimentsController < ApplicationController
   end
 
   get "/experiments/:id/edit" do
+    @story = Experiment.find_by(id: params[:id])
     erb :"/experiments/edit.html"
   end
 

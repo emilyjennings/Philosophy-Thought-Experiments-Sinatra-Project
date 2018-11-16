@@ -56,8 +56,9 @@ class ExperimentsController < ApplicationController
     redirect "/experiments/:id"
   end
 
-  # DELETE: /experiments/5/delete
   delete "/experiments/:id/delete" do
+    @story = Experiment.find_by(id: params[:id])
+    @story.destroy
     redirect "/experiments"
   end
 end

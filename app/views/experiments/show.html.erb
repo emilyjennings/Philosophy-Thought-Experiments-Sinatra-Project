@@ -4,4 +4,8 @@
 </br>
 <a href="/experiments/<%=@story.id%>/edit">Edit Story</a>
 </br>
-<a href="/experiments/<%=@story.id%>/delete">Delete Story</a>
+
+<form method="post" action="/experiments/<%=@story.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>

@@ -34,11 +34,6 @@ class ExperimentsController < ApplicationController
     end
   end
 
-  get "/experiments/:id" do
-    @story = Experiment.find(params[:id])
-    erb :"/experiments/show.html"
-  end
-
   get "/experiments/:id/edit" do
     @story = Experiment.find_by(id: params[:id])
     erb :"/experiments/edit.html"
@@ -54,6 +49,11 @@ class ExperimentsController < ApplicationController
     end
     flash[:message] = "Updated"
     redirect "/experiments/:id"
+  end
+
+  get "/experiments/:id" do
+    @story = Experiment.find(params[:id])
+    erb :"/experiments/show.html"
   end
 
   delete "/experiments/:id/delete" do

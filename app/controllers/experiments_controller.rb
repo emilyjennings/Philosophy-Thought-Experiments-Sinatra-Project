@@ -44,7 +44,7 @@ class ExperimentsController < ApplicationController
   # POST: /experiments - creates a new story and either associates it with the branch or makes a new branch
   post "/experiments" do
     if logged_in?
-      if !params[:story].empty?
+      if !params[:story].empty? && !params[:title].empty?
         @story = Experiment.create(title: params[:title], story: params[:story], branch_id: params[:branch_id])
         @story.user_id = current_user.id
         @story.save

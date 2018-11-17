@@ -22,17 +22,7 @@ class ExperimentsController < ApplicationController
   end
 
   # POST: /experiments - creates a new story and either associates it with the branch or makes a new branch
-  post "/experiments" do
-    if logged_in?
-      if !params[:story].empty?
-        @story = Experiment.create(title: params[:title], story: params[:story], branch_id: params[:branch_id])
-        @story.save
-        redirect "/experiments"
-      else
-        redirect "/experiments/new"
-      end
-    end
-  end
+
 
   get "/experiments/:id/edit" do
     @story = Experiment.find_by(id: params[:id])
@@ -49,8 +39,20 @@ class ExperimentsController < ApplicationController
     # else
       # redirect :"/experiments/:id/edit"
     # end
-    flash[:message] = "Updated"
+    # flash[:message] = "Updated"
     redirect "/experiments/#{@story.id}"
+  end
+
+  post "/experiments" do
+    if logged_in?
+      if !params[:story].empty?
+        @story = Experiment.create(title: params[:title], story: params[:story], branch_id: params[:branch_id])
+        @story.save
+        redirect "/experiments"
+      else
+        redirect "/experiments/new"
+      end
+    end
   end
 
   get "/experiments/:id" do

@@ -2,10 +2,10 @@
   <input id="hidden" type="hidden" name="_method" value="patch">
 
   <label><h2>Edit Your Thought Experiment Story:</h2></label>
-  <input type="text" id="story" name="experiment[title]" value="<%=@story.title%>">
+  <input type="text" id="story" name="title" value="<%=@story.title%>">
   </br>
 
-  <textarea rows="20" cols="80" name="experiment[story]" value="<%=@story.story%>"><%=@story.story%></textarea>
+  <textarea rows="20" cols="80" name="story" value="<%=@story.story%>"><%=@story.story%></textarea>
   </br>
 
   <label>Branch of philosophy (choose only one):</label>

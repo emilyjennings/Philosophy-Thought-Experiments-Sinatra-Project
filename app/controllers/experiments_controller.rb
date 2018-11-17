@@ -21,9 +21,6 @@ class ExperimentsController < ApplicationController
     end
   end
 
-  # POST: /experiments - creates a new story and either associates it with the branch or makes a new branch
-
-
   get "/experiments/:id/edit" do
     @story = Experiment.find_by(id: params[:id])
     erb :"/experiments/edit.html"
@@ -31,22 +28,25 @@ class ExperimentsController < ApplicationController
 
   patch "/experiments/:id" do
     @story = Experiment.find_by(id: params[:id])
-    # if !params[:story].empty?
+    if current_user.id == @story.user_id
       @story.title = params[:title]
       @story.story = params[:story]
       @story.branch_id = params[:branch_id]
       @story.save
-    # else
-      # redirect :"/experiments/:id/edit"
-    # end
-    # flash[:message] = "Updated"
+    else
+      flash[:message] = "that's not your story to edit"
+      redirect :"/experiments"
+    end
+    flash[:message] = "Updated"
     redirect "/experiments/#{@story.id}"
   end
 
+  # POST: /experiments - creates a new story and either associates it with the branch or makes a new branch
   post "/experiments" do
     if logged_in?
       if !params[:story].empty?
         @story = Experiment.create(title: params[:title], story: params[:story], branch_id: params[:branch_id])
+        @story.user_id = current_user.id
         @story.save
         redirect "/experiments"
       else

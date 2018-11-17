@@ -1,3 +1,11 @@
 <h2><%=@story.title%></h2>
 <p><%=@story.story%></p>
-<h4><%=Branch.find_by(id: @story.branch_id).name%></h4>
+<h4>Branch of Philosophy: <%=Branch.find_by(id: @story.branch_id).name%></h4>
+</br>
+<a href="/experiments/<%=@story.id%>/edit">Edit Story</a>
+</br>
+
+<form method="post" action="/experiments/<%=@story.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>

@@ -1,1 +1,20 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<form action="/experiments/<%=@story.id%>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+  <label><h2>Edit Your Thought Experiment Story:</h2></label>
+  <input type="text" id="story" name="title" value="<%=@story.title%>">
+  </br>
+
+  <textarea rows="20" cols="80" name="story" value="<%=@story.story%>"><%=@story.story%></textarea>
+  </br>
+
+  <label>Branch of philosophy (choose only one):</label>
+  <select name="branch_id">
+     <% Branch.all.each do |b| %>
+       <option value="<%=b.id %>"><%= b.name %></option>
+     <% end %>
+   </select>
+  </br>
+
+  <input type="submit" name="submit" id='submit' value="submit">
+</form>

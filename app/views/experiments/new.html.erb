@@ -1,5 +1,3 @@
-
-
 <%if logged_in?%>
   <form action="/experiments" method="post">
     <label><h2>Create a new Thought Experiment Story:</h2></label>
@@ -11,7 +9,7 @@
 
     <select name="branch_id">
        <% Branch.all.each do |b| %>
-         <option value=<%=b.id %>><%= b.name %></option>
+         <option value="<%=b.id %>"><%= b.name %></option>
        <% end %>
      </select>
 

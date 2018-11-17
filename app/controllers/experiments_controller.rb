@@ -63,6 +63,7 @@ class ExperimentsController < ApplicationController
   delete "/experiments/:id/delete" do
     @story = Experiment.find_by(id: params[:id])
     @story.destroy
+    flash[:message] = "Deleted!"
     redirect "/experiments"
   end
 end

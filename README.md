@@ -1,4 +1,4 @@
-#Philosophy Thought Experiments
+# Philosophy Thought Experiments
 
 This is a project that allows users to login and then submit stories that serve as important thought experiments relating to philosophical dilemmas to a community wiki about philosophy. I was inspired to make this because as a philosophy student years ago, it was hard to find such fun things in one place. Thought experiments were definitely one of my favorite parts of studying philosophy because you get to tell a little story to illustrate a point you're making in order to solve a dilemma. Thought experiments fall under a branch of philosophy such as: morality, metaphysics, epistemology, political philosophy, logic, and ethics.
 

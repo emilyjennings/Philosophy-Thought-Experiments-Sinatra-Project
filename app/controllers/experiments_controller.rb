@@ -41,14 +41,16 @@ class ExperimentsController < ApplicationController
 
   patch "/experiments/:id" do
     @story = Experiment.find_by(id: params[:id])
-    if !params[:story].empty?
-      @story = Experiment.create(title: params[:title], story: params[:story], branch_id: params[:branch_id])
+    # if !params[:story].empty?
+      @story.title = params[:title]
+      @story.story = params[:story]
+      @story.branch_id = params[:branch_id]
       @story.save
-    else
-      redirect :"/experiments/:id/edit"
-    end
+    # else
+      # redirect :"/experiments/:id/edit"
+    # end
     flash[:message] = "Updated"
-    redirect "/experiments/:id"
+    redirect "/experiments/#{@story.id}"
   end
 
   get "/experiments/:id" do

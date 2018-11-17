@@ -9,6 +9,8 @@ class BranchesController < ApplicationController
 
   # GET: /branches/5
   get "/branches/:id" do
+    @branch = Branch.find(params[:id])
+
     erb :"/branches/show.html"
   end
 

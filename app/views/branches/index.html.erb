@@ -1,4 +1,5 @@
 <h1>Branches:</h1>
+<h5>Click to see a list of associated thought experiments</h5>
 <%Branch.all.each do |b|%>
-  <h2><%=b.name%></h2>
+  <h2> <a href="/branches/<%=b.id%>"><%=b.name%></a> </h2>
 <%end%>

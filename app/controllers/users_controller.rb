@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-  #shows a form to create a new user or a link to log in
+  #shows a form to log in or a link to create a login
   get "/start" do
-    erb :"/users/new.html"
+    erb :"users/login.html"
   end
 
   # welcome page after logging in
@@ -33,8 +33,12 @@ class UsersController < ApplicationController
   end
 
   #just takes to a login page for a repeat user
-  get "/users/login" do
-    erb :"users/login.html"
+  get "/users/new" do
+    if !logged_in?
+      erb :"/users/new.html"
+    else
+      redirect to '/start'
+    end
   end
 
   post '/login' do

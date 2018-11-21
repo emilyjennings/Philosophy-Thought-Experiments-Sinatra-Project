@@ -1,14 +1,14 @@
 require 'pry'
 
 class ExperimentsController < ApplicationController
-
+  use Rack::Flash
   # GET: /experiments - lists all experiments and links only if logged in
   get "/experiments" do
     if logged_in?
       @stories = Experiment.all
       erb :"/experiments/index.html"
     else
-      redirect :'/users/index'
+      redirect :'/start'
     end
   end
 
@@ -17,7 +17,7 @@ class ExperimentsController < ApplicationController
     if logged_in?
       erb :"/experiments/new.html"
     else
-      redirect :'/users/index'
+      redirect :'/start'
     end
   end
 
@@ -37,8 +37,8 @@ class ExperimentsController < ApplicationController
       flash[:message] = "that's not your story to edit"
       redirect :"/experiments"
     end
-    flash[:message] = "Updated"
-    redirect "/experiments/#{@story.id}"
+      flash[:message] = "Updated"
+      redirect "/experiments/#{@story.id}"
   end
 
   # POST: /experiments - creates a new story and either associates it with the branch or makes a new branch

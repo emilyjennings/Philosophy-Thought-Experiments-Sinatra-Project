@@ -1,3 +1,4 @@
+
 <% if flash.has?(:message) %>
   <%= flash[:message] %>
 <% end %>
@@ -5,6 +6,7 @@
 <h2><%=@story.title%></h2>
 <p><%=@story.story%></p>
 <h4>Branch of Philosophy: <%=Branch.find_by(id: @story.branch_id).name%></h4>
+<h5>Author: <%=User.find_by(id: @story.user_id).username.capitalize%></h5>
 </br>
 <a href="/experiments/<%=@story.id%>/edit">Edit Story</a>
 </br>
@@ -15,4 +17,4 @@
 </form>
 
 </br>
-<p><a href="/users/logout">Log Out</a></p>
+<!-- <p><a href="/users/logout">Log Out</a></p> -->

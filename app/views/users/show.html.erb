@@ -1,4 +1,4 @@
-<h2><%=@user.username%>'s Stories</h2>
+<h2><%=@user.username.capitalize%>'s Stories</h2>
 </br>
 <%Experiment.all.each do |e|%>
   <%if e.user_id == current_user.id%>

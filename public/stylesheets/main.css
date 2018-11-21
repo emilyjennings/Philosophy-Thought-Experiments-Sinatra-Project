@@ -93,8 +93,17 @@
 
   footer.branding {
     border-top: 2px solid #b9e5cc;
-    margin-top: 20px;
+    margin: 20px auto;
     padding-top: 20px;
+    font-weight: bold;
+  }
+
+  .nav a {
+    margin: auto;
+    display: inline-block;
+    font-weight: bold;
+    float: left;
+
   }
 }
 

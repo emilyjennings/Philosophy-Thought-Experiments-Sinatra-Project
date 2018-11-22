@@ -99,10 +99,11 @@
   }
 
   .nav a {
-    margin: auto;
+    margin: 10px auto;
     display: inline-block;
     font-weight: bold;
     float: left;
+
 
   }
 }

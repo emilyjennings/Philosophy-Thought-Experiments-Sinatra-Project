@@ -3,10 +3,10 @@
 
   <label><h2>Edit Your Thought Experiment Story:</h2></label>
   <input type="text" id="story" name="title" value="<%=@story.title%>">
-  </br>
+  <br></br>
 
   <textarea rows="20" cols="80" name="story" value="<%=@story.story%>"><%=@story.story%></textarea>
-  </br>
+  <br></br>
 
   <label>Branch of philosophy (choose only one):</label>
   <select name="branch_id">
@@ -14,7 +14,7 @@
        <option value="<%=b.id %>"><%= b.name %></option>
      <% end %>
    </select>
-  </br>
+  <br></br>
 
   <input type="submit" name="submit" id='submit' value="submit">
 </form>

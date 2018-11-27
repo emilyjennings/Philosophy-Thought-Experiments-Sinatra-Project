@@ -1,7 +1,7 @@
 require 'pry'
 
 class ExperimentsController < ApplicationController
-  use Rack::Flash
+
   # GET: /experiments - lists all experiments and links only if logged in
   get "/experiments" do
     if logged_in?

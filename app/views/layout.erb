@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
+    <% if flash[:message] %>
+      <%= flash[:message] %>
+    <% end %>
     <div class="wrapper">
       <h1>Philosophy Thought Experiments</h1>
 

@@ -37,6 +37,7 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :"/users/new.html"
     else
+      flash[:message] = "you're already logged in"
       redirect to '/start'
     end
   end

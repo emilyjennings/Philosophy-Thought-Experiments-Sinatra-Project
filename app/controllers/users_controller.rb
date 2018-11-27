@@ -46,7 +46,7 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if !@user || params[:username].empty?
       redirect "/start"
-    elsif @user && user.authenticate(params[:password])
+    elsif @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect "/users"
     else
